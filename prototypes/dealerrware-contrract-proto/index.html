@@ -10,6 +10,18 @@
 	<style>
 	body, html, [ng-controller], .console-wrap, .console, .screens-wrap, .screen-wrap { background: white !important; background-color: white !important; }
 div.tools, div.whiteboard_tools, [inv-toolbar] { display: none !important; }
+</style>
+<script>
+(function() {
+  function removeToolbar() {
+    var el = document.querySelector('[inv-toolbar]');
+    if (el) { el.parentNode.removeChild(el); }
+    else { setTimeout(removeToolbar, 200); }
+  }
+  document.addEventListener('DOMContentLoaded', function() { setTimeout(removeToolbar, 500); });
+})();
+</script>
+<style>
 	</style>
 	<!-- Custom webfonts -->
 	<style>
